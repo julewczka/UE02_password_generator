@@ -1,0 +1,23 @@
+<div layout-align="column">
+  <div>
+    <label>Länge</label>
+    <input [value]="passwordLength" [(ngModel)]="passwordLength">
+  </div>
+  <div>
+    <label>Anzahl an Passwörtern</label>
+    <input [value]="passwordAmount" [(ngModel)]="passwordAmount" >
+  </div>
+  <div>
+    <label>Alphabet</label>
+    <input [value]="passwordAlphabet" [(ngModel)]="passwordAlphabet" >
+  </div>
+  <div>
+    <button (click)="Submit()">Submit</button>
+  </div>
+
+  <div *ngIf="passwords.length != 0">
+    <password *ngFor="let password of passwords; let i = index" [password]="password" [count]="i"></password>
+  </div>
+</div>
+
+
